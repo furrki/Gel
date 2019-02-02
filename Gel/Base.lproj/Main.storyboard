@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="70" width="375" height="548"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="375" id="fi3-rt-MhL">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="375" id="fi3-rt-MhL" customClass="TrendingCell" customModule="Gel" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="375"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="fi3-rt-MhL" id="cJs-s1-jab">
@@ -128,8 +128,22 @@
                                                 <constraint firstItem="0Wu-SC-h3R" firstAttribute="bottom" secondItem="cJs-s1-jab" secondAttribute="bottomMargin" id="mHz-Ok-PFs"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="containerView" destination="0Wu-SC-h3R" id="NH5-Vy-bgJ"/>
+                                            <outlet property="langLabel" destination="do7-df-yug" id="fKg-m6-ckR"/>
+                                            <outlet property="numberOfContributorsLabel" destination="zi3-kN-Tin" id="zKg-MM-FX2"/>
+                                            <outlet property="numberOfForksLabel" destination="w2o-si-AmO" id="cSa-Tq-3bP"/>
+                                            <outlet property="repoDescLabel" destination="9Wh-rX-hPi" id="bbu-dY-Jlq"/>
+                                            <outlet property="repoImage" destination="oUd-Q3-yQ9" id="F4j-Qp-nSq"/>
+                                            <outlet property="repoNameLabel" destination="cud-t1-pkR" id="1cU-Zg-6wx"/>
+                                            <outlet property="viewReadmeButton" destination="xm9-Jr-Lov" id="DFw-1f-70S"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="zI8-aq-66Y"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="mpX-Tp-BOd"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IVT-Si-MDG">
                                 <rect key="frame" x="171.5" y="38" width="32" height="24"/>
