@@ -158,10 +158,6 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="zI8-aq-66Y"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="mpX-Tp-BOd"/>
-                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IVT-Si-MDG">
                                 <rect key="frame" x="171.5" y="38" width="32" height="24"/>
