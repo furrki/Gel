@@ -23,6 +23,7 @@
 		841CE3A2220656DE0010888B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CE3A1220656DE0010888B /* Constants.swift */; };
 		841CE3A5220657B90010888B /* DownloadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CE3A4220657B90010888B /* DownloadService.swift */; };
 		841CE3A722066AF90010888B /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841CE3A622066AF90010888B /* SearchCell.swift */; };
+		84254E3B220677E700AAB3EA /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84254E3A220677E700AAB3EA /* UIViewController.swift */; };
 		9DBA18B483D75D7E693866D8 /* Pods_GelUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 302130DF11407DCC126854F8 /* Pods_GelUITests.framework */; };
 		C7040A7134D9D92730F92CC4 /* Pods_GelTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A650FDC53ECED9785EB5EB /* Pods_GelTests.framework */; };
 /* End PBXBuildFile section */
@@ -73,6 +74,7 @@
 		841CE3A1220656DE0010888B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		841CE3A4220657B90010888B /* DownloadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadService.swift; sourceTree = "<group>"; };
 		841CE3A622066AF90010888B /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
+		84254E3A220677E700AAB3EA /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		86CB08F429CBBE8C5C2B5FFC /* Pods-GelTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GelTests.debug.xcconfig"; path = "Target Support Files/Pods-GelTests/Pods-GelTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F581C079E09552C28297D985 /* Pods-Gel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gel.debug.xcconfig"; path = "Target Support Files/Pods-Gel/Pods-Gel.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -143,6 +145,7 @@
 		841CE36422060F6D0010888B /* Gel */ = {
 			isa = PBXGroup;
 			children = (
+				84254E39220677CA00AAB3EA /* Extension */,
 				841CE3A3220657AE0010888B /* Service */,
 				841CE3A0220656C80010888B /* Utils */,
 				841CE395220638940010888B /* Controller */,
@@ -217,6 +220,14 @@
 				841CE3A4220657B90010888B /* DownloadService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		84254E39220677CA00AAB3EA /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				84254E3A220677E700AAB3EA /* UIViewController.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		AD723454D66275A7233A20CC /* Frameworks */ = {
@@ -466,6 +477,7 @@
 				841CE39F2206517A0010888B /* TrendingCell.swift in Sources */,
 				841CE3A722066AF90010888B /* SearchCell.swift in Sources */,
 				841CE39B22063C710010888B /* RoundedBorderTextView.swift in Sources */,
+				84254E3B220677E700AAB3EA /* UIViewController.swift in Sources */,
 				841CE397220639F40010888B /* SearchVC.swift in Sources */,
 				841CE36822060F6D0010888B /* TrendingsVC.swift in Sources */,
 				841CE39D220641460010888B /* Repo.swift in Sources */,

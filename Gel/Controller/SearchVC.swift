@@ -43,10 +43,10 @@ class SearchVC: UIViewController, UITableViewDelegate, UITextFieldDelegate {
                         let items = results.object(forKey: "items") as? [Dictionary<String, Any>] ?? []
                         for item in items {
                             guard let name = item["name"] as? String,
-                            let description = item["description"] as? String,
-                            let language = item["language"] as? String,
-                            let repoUrl = item["html_url"] as? String,
-                            let forksCount = item["forks_count"] as? Int else { break }
+                                let description = item["description"] as? String,
+                                let language = item["language"] as? String,
+                                let repoUrl = item["html_url"] as? String,
+                                let forksCount = item["forks_count"] as? Int else { break }
                             let repo = Repo(image: UIImage(named: "search")!, name: name, description: description, numberOfForks: forksCount, language: language, numberOfContributors: 0, repoUrl: repoUrl)
                             searchRepos.append(repo)
                         }
@@ -57,13 +57,14 @@ class SearchVC: UIViewController, UITableViewDelegate, UITextFieldDelegate {
             .observeOn(MainScheduler.instance)
         searchResultsObservalbe.bind(to: tableView.rx.items(cellIdentifier: "SearchCell")) {
             (row, repo: Repo, cell: SearchCell) in
-                cell.configCell(repo: repo)
+            cell.configCell(repo: repo)
             }.disposed(by: disposeBag)
         
     }
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         guard let cell = tableView.cellForRow(at: indexPath) as? SearchCell else { return }
-        
+        let url = cell.repoUrl!
+        self.presentSFSafariVCFor(url: url)
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         view.endEditing(true)
@@ -74,3 +75,4 @@ class SearchVC: UIViewController, UITableViewDelegate, UITextFieldDelegate {
         return true
     }
 }
+
