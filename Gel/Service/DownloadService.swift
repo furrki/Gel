@@ -40,7 +40,6 @@ class DownloadService {
                             "html_url": repoUrl,
                             "contributors_url": contributorsUrl,
                             "avatar_url": avatarUrl,
-                            
                             ]
                     trendingReposArr.append(repoDict)
                 } else {
@@ -97,4 +96,5 @@ class DownloadService {
         }
     }
 }
+
 

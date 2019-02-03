@@ -33,6 +33,7 @@ class TrendingsVC: UIViewController, UITableViewDelegate {
                 cell.configCell(repo: repo)
             
             }.disposed(by: disposeBag)
+        tableView.allowsSelection = false
         
     }
     
