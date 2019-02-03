@@ -63,6 +63,7 @@ class SearchVC: UIViewController, UITableViewDelegate, UITextFieldDelegate {
     }
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         guard let cell = tableView.cellForRow(at: indexPath) as? SearchCell else { return }
+        cell.selectionStyle = .none
         let url = cell.repoUrl!
         self.presentSFSafariVCFor(url: url)
     }
