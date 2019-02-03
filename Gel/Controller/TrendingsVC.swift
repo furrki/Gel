@@ -12,15 +12,21 @@ import RxCocoa
 
 class TrendingsVC: UIViewController, UITableViewDelegate {
 
-    
-    
     @IBOutlet weak var tableView: UITableView!
-    
+
+    let refreshControl = UIRefreshControl()
     var dataSource = PublishSubject<[Repo]>()
     var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.refreshControl = refreshControl
+        refreshControl.tintColor = #colorLiteral(red: 0.2039215686, green: 0.5960784314, blue: 0.8588235294, alpha: 1)
+        refreshControl.attributedTitle = NSAttributedString(string: "Fetching Repos From Github 🐰",
+                                                            attributes: [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.2039215686, green: 0.5960784314, blue: 0.8588235294, alpha: 1),
+                                                                         NSAttributedString.Key.font: UIFont(name: "AvenirNext-DemiBold", size: 16.0)!])
+        refreshControl.addTarget(self, action: #selector(fetchData), for: .valueChanged)
         fetchData()
         dataSource.bind(to: tableView.rx.items(cellIdentifier: "TrendingCell")){
             (row, repo: Repo, cell: TrendingCell) in 
@@ -29,9 +35,11 @@ class TrendingsVC: UIViewController, UITableViewDelegate {
             }.disposed(by: disposeBag)
         
     }
-    func fetchData(){
+    
+    @objc func fetchData(){
         DownloadService.instance.trendingRepos { (repos) in
             self.dataSource.onNext(repos)
+            self.refreshControl.endRefreshing()
         }
     }
     
